@@ -1,42 +1,28 @@
-radius
 document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.carousel-track')
-  const slides = Array.from(track.children);
-  let currentIndex = 0;
+    const track = document.querySelector('.carousel-track');
+    
+    if (!track) {
+        console.error("Elemento .carousel-track não encontrado.");
+        return;
+    }
 
-  const getSlideWidth = () => {
-    const slide = slides[0];
-    return slide.getBoundingClientRect().width;
-  }
-  const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    const slides = Array.from(track.children);
+    if (slides.length === 0) return;
 
-    currentSlide.classList.remove('current-slide');
-    targetSlide.classList.add('current-slide');
-  }
+    let currentIndex = 0;
 
-  const arrangeSlides = () => {
-    const slideWidth = getSlideWidth();
+    const updateCarouselPosition = () => {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const offset = slideWidth * currentIndex;
+        track.style.transform = `translateX(-${offset}px)`;
+    };
 
-    slides.forEach((slide, index) => {
-      slide.style.left = slideWidth * index + 'px';
-    });
-  }
-  const autoScroll = () => {
-    const currentSlide = track.querySelector('.current-slide');
+    const moveToNextSlide = () => {
+      currentIndex = (currentIndex + 2) % slides.length;
+      updateCarouselPosition();
+    };
 
-  let nextIndex = (currentIndex + 1) % slides.length;
-    const nextSlide = slides[nextIndex];
-
-
-    moveToSlide(track, currentSlide, nextSlide);
-
-    currentIndex = nextIndex;
-  }
-
-arrangeSlides();
-slides[0].classList.add('current-slide');
-setInterval(autoScroll, 4000);
-window.addEventListener('resize', arrangeSlides);
-
+    setInterval(moveToNextSlide, 4000);
+    window.addEventListener('resize', updateCarouselPosition);
+    updateCarouselPosition();
 });
