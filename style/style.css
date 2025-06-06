@@ -29,6 +29,13 @@ body {
     background-color: var(--light-bg);
 }
 
+h1, h2, h3 {
+    font-family: var(--font-title);
+}
+
+p, a, li {
+    font-family: var(--font-text);
+}
 /*----- Header -----*/
 header {
     background-color: var(--dark);
@@ -76,7 +83,6 @@ nav {
 }
 
 nav a{
-    font-family: var(--font-text);
     color: var(--light-bg);
     font-size: 17px;
     text-decoration: none;
@@ -152,7 +158,6 @@ section#hero {
 }
 
 #flex-container-hero > h1 {
-    font-family: var(--font-title);
     font-weight: 400;
     font-size: 150px;
     line-height: 115px;
@@ -161,7 +166,6 @@ section#hero {
 #flex-container-hero > p {
     max-width: 783px;
     margin-top: 50px;
-    font-family: var(--font-title);
     font-size: 22px;
 }
 
@@ -185,22 +189,148 @@ img#phone {
 
 /*----- Features -----*/
 #features {
-    padding: 80px 100px 0px 100px;
-    background-color: antiquewhite;
+    padding: 20px 100px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 450px;
+    align-items: center;
+    justify-items: center;
     gap: 20px;
 }
 
 div.feature-card {
-    background-color: aliceblue;
+    max-width: 450px;
+    max-height: 250px;
+    height: 100%;
+    padding: 20px 20px;
+    text-align: center;
+
+    border-radius: 15px;
+    color: var(--dark);
 }
 
 div.feature-card > h2 {
-    font-family: var(--font-title);
+    font-size: 28px;
+    margin-bottom: 5px;
 }
 
 div.feature-card > p {
-    font-family: var(--font-text);
+    font-size: 17px;
+}
+
+
+/*----- Learn about money -----*/
+section#learn {
+    max-height: 100%;
+
+    background-color: var(--dark);
+    color: var(--light-bg);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+}
+
+#learn h1, #learn p {
+    grid-column: 1 / 3;
+    text-align: center;
+}
+
+#learn h1 {
+    font-size: 60px;
+    padding: 15px 0px;
+}
+
+#learn p {
+    font-size: 20px;
+}
+
+img#finance-path {
+    max-width: calc(600px + 20%);
+    max-height: calc(300px + 20%);
+}
+
+
+/*----- Testimonials -----*/
+#testimonials {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-track {
+    position: relative;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+}
+
+.testimony {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.testimony-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.testimony img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+}
+
+.testimony-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimony h3 {
+    font-size: 22px;
+    color: var(--dark);
+    margin: 0;
+}
+
+.testimony p {
+    color: #323232;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .carousel-container {
+        max-width: 800px;
+    }
 }
