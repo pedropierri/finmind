@@ -2,12 +2,12 @@
 
 
  /*----- Import fonts -----*/
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 
 /*----- Root -----*/
 :root { 
-    --font-title: "Red Hat Display";
+    --font-title: "Outfit";
     --font-text: "Hind Siliguri";
 
     --primary: #21a85e;
@@ -135,7 +135,7 @@ section#hero {
 
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(350px, 783px) 1fr;
     grid-template-rows: 800px;
 }
 
@@ -153,26 +153,31 @@ section#hero {
 
 #flex-container-hero > h1 {
     font-family: var(--font-title);
-    font-size: 160px;
-    line-height: 80px;
+    font-weight: 400;
+    font-size: 150px;
+    line-height: 115px;
 }
 
 #flex-container-hero > p {
-    max-width: 600px;
-    margin-top: 15px;
+    max-width: 783px;
+    margin-top: 50px;
     font-family: var(--font-title);
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #flex-container-hero > button {
-    width: 150px;
-    height: 60px;
-    margin-top: 45px;
+    width: 160px;
+    height: 65px;
+    margin-top: 50px;
+
+    font-size: 19px;
 }
 
 
 img#phone {
+    min-width: 500px;
     max-width: 700px;
     max-height: 600px;
+    width: 100%;
     justify-self: end;
 }
