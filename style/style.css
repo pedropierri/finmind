@@ -1,8 +1,12 @@
-@charset "UTF-8";
+@charset "UTF-8"; 
 
+
+ /*----- Import fonts -----*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
-:root {
+
+/*----- Root -----*/
+:root { 
     --font-title: "Red Hat Display";
     --font-text: "Hind Siliguri";
 
@@ -13,12 +17,19 @@
     --light-bg: #F5F6FA;
 }
 
+
+/*----- General settings -----*/
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--light-bg);
+}
+
+/*----- Header -----*/
 header {
     background-color: var(--dark);
     padding: 5px 30px;
@@ -29,7 +40,9 @@ header {
     align-items: center;
 }
 
-@media screen and (max-width: 750px){ 
+
+/*----- Responsive media for phones -----*/
+@media screen and (max-width: 700px){ 
     header {
         grid-template-columns: 1fr;
         grid-template-rows: 80px 80px;
@@ -67,14 +80,23 @@ nav a{
     color: var(--light-bg);
     font-size: 17px;
     text-decoration: none;
+    
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 nav a:hover{
     color: var(--primary);
-    transition: 0.5s;
+
+    transform: scale(1.1);
+    
 }
 
-menu > button {
+
+/*----- All buttons general settings -----*/
+button {
     width: 130px;
     height: 50px;
 
@@ -90,8 +112,67 @@ menu > button {
     box-shadow: none;
 
     cursor: pointer;
+
+    /*----- Clean transition settings ----- */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-menu > button:hover {
-    transform: scale(10%);
+button:hover {
+    font-weight: 600;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    transform: scale(1.1);
+}
+
+
+/*----- Hero -----*/
+section#hero {
+    padding: 100px;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 800px;
+}
+
+#flex-container-hero {
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    gap: 10px;
+}
+
+#flex-container-hero > h1, #flex-container-hero > p, #flex-container-hero > button {
+    grid-column: 1 / 2 ;
+    grid-row: 1 / 2;
+}
+
+#flex-container-hero > h1 {
+    font-family: var(--font-title);
+    font-size: 160px;
+    line-height: 80px;
+}
+
+#flex-container-hero > p {
+    max-width: 600px;
+    margin-top: 15px;
+    font-family: var(--font-title);
+    font-size: 18px;
+}
+
+#flex-container-hero > button {
+    width: 150px;
+    height: 60px;
+    margin-top: 45px;
+}
+
+
+img#phone {
+    max-width: 700px;
+    max-height: 600px;
+    justify-self: end;
 }
