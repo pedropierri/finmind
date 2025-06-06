@@ -131,12 +131,12 @@ button:hover {
 
 /*----- Hero -----*/
 section#hero {
-    padding: 100px;
+    padding: 100px 100px 0px 100px;
 
 
     display: grid;
     grid-template-columns: minmax(350px, 783px) 1fr;
-    grid-template-rows: 800px;
+    grid-template-rows: 630px;
 }
 
 #flex-container-hero {
@@ -179,5 +179,28 @@ img#phone {
     max-width: 700px;
     max-height: 600px;
     width: 100%;
-    justify-self: end;
+    justify-self: center;
+}
+
+
+/*----- Features -----*/
+#features {
+    padding: 80px 100px 0px 100px;
+    background-color: antiquewhite;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+div.feature-card {
+    background-color: aliceblue;
+}
+
+div.feature-card > h2 {
+    font-family: var(--font-title);
+}
+
+div.feature-card > p {
+    font-family: var(--font-text);
 }
