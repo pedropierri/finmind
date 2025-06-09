@@ -240,7 +240,7 @@ section#learn {
 
 #learn h1 {
     font-size: 60px;
-    padding: 25     px 0px;
+    padding: 25px 0px;
 }
 
 #learn p {
@@ -347,6 +347,11 @@ section#pricing {
     justify-content: center;
 }
 
+section#pricing h2 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
 div.plan {
     max-width: 500px;
     width: 100%;
@@ -368,15 +373,47 @@ div.plan p{
     font-size: 20px;
 }
 
-&div.price-container {
-    border: 1px solid red
+div.price-container {
+    display: grid;
+    grid-template-columns: 80px 210px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-div.plan .price-value {
-    font-size: 35px;
+p.price span.price-value {
+    font-size: 70px;
     color: var(--primary)
 }
 
+p.price {
+    border: 1px solid green;
+
+    display: contents;
+}
+
+p.price span.price-text {
+    font-size: 20px;
+    text-align: start;
+    line-height: 20px;
+
+    grid-column: 2 / 3;
+}
+
+
 div.plan ul {
     list-style-type: none;
+    line-height: 35px;
+}
+
+div.plan li {
+    font-size: 20px;
+}
+
+div.plan li::before {
+    content: '✔️';
+}
+
+div.plan li.disabled::before {
+    content: '❌';
 }
