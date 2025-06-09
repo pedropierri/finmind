@@ -6,11 +6,12 @@
     <title>FinMind - Level up your financial game</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="shortcut icon" href="../images/logo/logo3.PNG" type="image/x-icon">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 </head>
 <body>
     
     <header>
-        <img src="../images/logo/2.png" alt="Finmind logo" id="logo-finmind">
+        <img src="../images/logo/logo2.png" alt="Finmind logo" id="logo-finmind">
         <menu>
             <nav>
                 <a href="#features">Features</a>
@@ -25,8 +26,9 @@
 
     <section id="hero"> <!--PENSAR EM FAZER ANIMAÇÃO NESSA PARTE-->
         <div id="flex-container-hero">
-            <h1>
-                Level <span id="hero-title-level-word">up</span> <br> your money</span>
+            <h1 class="hero-title">
+                <span>Level up</span>
+                <span class="gradient-text">your money</span>
             </h1>
             <p>
                 FinMind gives you the tools to manage your money, hit your goals, and build a solid financial future — even if you’re just getting started. Simple, stress-free, and made for real life. Click the button below and start organizing your financial life.
@@ -38,7 +40,7 @@
 
     <section id="features">
 
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll">
             <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#2D3047" class="feature-icon"><path d="M240-80q-50 0-85-35t-35-85v-120h120v-560l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h240v80H360Zm0 120v-80h240v80H360Zm320-120q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480Z"/></svg>
             <h2>
                 Smart Expense Tracking
@@ -48,7 +50,7 @@
             </p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll">
             <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#2D3047" class="feature-icon"><path d="M200-80v-760h640l-80 200 80 200H280v360h-80Z"/></svg>
             <h2>
                 Your Financial Goals
@@ -58,8 +60,8 @@
             </p>
         </div>
 
-        <div class="feature-card">
-            <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#2D3047"><path d="m105-399-65-47 200-320 120 140 160-260 120 180 135-214 65 47-198 314-119-179-152 247-121-141-145 233Zm475 159q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM784-80 676-188q-21 14-45.5 21t-50.5 7q-75 0-127.5-52.5T400-340q0-75 52.5-127.5T580-520q75 0 127.5 52.5T760-340q0 26-7 50.5T732-244l108 108-56 56Z"/></svg>
+        <div class="feature-card animate-on-scroll">
+            <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#2D3047" class="feature-icon"><path d="m105-399-65-47 200-320 120 140 160-260 120 180 135-214 65 47-198 314-119-179-152 247-121-141-145 233Zm475 159q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM784-80 676-188q-21 14-45.5 21t-50.5 7q-75 0-127.5-52.5T400-340q0-75 52.5-127.5T580-520q75 0 127.5 52.5T760-340q0 26-7 50.5T732-244l108 108-56 56Z"/></svg>
             <h2>
                 Real-Time Insights & Tips
             </h2>
@@ -70,13 +72,13 @@
 
     </section>
     <section id="learn">
-        <h1>
+        <h1 class="animate-on-scroll">
             Learn about money, your way
         </h1>
-        <p>
+        <p class="animate-on-scroll">
             It doesn’t matter if you’ve never understood finances — FinMind is built to guide you step-by-step, at your own pace, no pressure.
         </p>
-        <img src="../images/learn/finance-path.png" alt="Map for learn about money" id="finance-path">
+        <img src="../images/learn/finance-path.png" alt="Map for learn about money" id="finance-path" class="animate-on-scroll">
     </section>
     <section id="testimonials">
         <div class="carousel-container">
@@ -119,7 +121,7 @@
         </div>
     </section>
     <section id="pricing">
-        <div class="plan" id="plan-free">
+        <div class="plan animate-on-scroll" id="plan-free">
             <h3>Starter</h3>
             <p>Perfect for beginners</p>
             <div class="price-container">
@@ -140,7 +142,7 @@
                 <button class="pricing-button">Sign up for free</button>
             </div>
         </div>
-        <div class="plan" id="plan-pro">
+        <div class="plan animate-on-scroll" id="plan-pro">
             <h1 id="plan-pro-chosen">Most chosen</h1>
             <h3 id="plan-pro-title">Pro</h3>
             <p>For those ready to level up</p>
@@ -162,7 +164,7 @@
                 <button class="pricing-button">Sign up for free</button>
             </div>
         </div>
-        <div class="plan" id="plan-premium">
+        <div class="plan animate-on-scroll" id="plan-premium">
             <h3>Premium</h3>
             <p>Advanced control and deep insights</p>
             <div class="price-container">

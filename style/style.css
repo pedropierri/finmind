@@ -36,6 +36,18 @@ h1, h2, h3 {
 p, a, li {
     font-family: var(--font-text);
 }
+
+/* ----- Fade animation ----- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*----- Header -----*/
 header {
     background-color: var(--dark);
@@ -47,24 +59,6 @@ header {
     align-items: center;
 }
 
-
-/*----- Responsive media for phones -----*/
-@media screen and (max-width: 700px){ 
-    header {
-        grid-template-columns: 1fr;
-        grid-template-rows: 80px 80px;
-        justify-items: center;
-        padding-top: 10px;
-    }
-
-    menu {
-        grid-row: 2 / 3;
-    }
-
-    
-}
-
-/*----- Header -----*/
 #logo-finmind {
     width: 140px;
     height: 70px;   
@@ -176,6 +170,31 @@ section#hero {
     font-size: 22px;
 }
 
+/*----- Gradient text -----*/
+
+.gradient-text {
+  background: linear-gradient(to right, #30e7b9, #30d876, #a5ff30, #34D399, #2DD4BF);
+  background-size: 200% auto;
+
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  animation: gradient-flow 6s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #flex-container-hero > button {
     width: 160px;
     height: 65px;
@@ -187,12 +206,46 @@ section#hero {
 
 img#phone {
     min-width: 500px;
-    max-width: 530px;
-    max-height: 500px;
+    max-width: 600px;
+    max-height: 550px;
     width: 100%;
     justify-self: center;
+
+    animation: floatAnimation 4s ease-in-out infinite;
 }
 
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px); 
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#flex-container-hero > h1, #flex-container-hero > p, #flex-container-hero > button {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn-up 0.8s ease-out forwards;
+}
+
+#flex-container-hero > p {
+    animation-delay: 0.3s;
+}
+
+#flex-container-hero > button {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeIn-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /*----- Features -----*/
 #features {
@@ -204,6 +257,14 @@ img#phone {
     align-items: center;
     justify-items: center;
     gap: 20px;
+}
+
+.feature-icon {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: translateY(-8px);
 }
 
 div.feature-card {
@@ -224,6 +285,18 @@ div.feature-card > h2 {
 
 div.feature-card > p {
     font-size: 17px;
+}
+
+#features .feature-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+#features .feature-card:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+#features .feature-card:nth-child(3) {
+  transition-delay: 0.5s;
 }
 
 
@@ -349,11 +422,13 @@ img#finance-path {
 /*----- Pricing -----*/
 section#pricing {
     background-color: var(--light-bg);
-    color: var(--dark);
-
-    display: flex;
+     color: var(--dark);
+     display: flex;
+    padding: 80px 20px; 
     justify-content: center;
-    gap: 20px;
+    align-items: center; 
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 section#pricing h2 {
