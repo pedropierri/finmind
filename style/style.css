@@ -164,9 +164,11 @@ section#hero {
     line-height: 115px;
 }
 
+/*
 #hero-title-level-word {
     color: var(--primary);
 }
+*/
 
 #flex-container-hero > p {
     max-width: 783px;
@@ -501,6 +503,7 @@ section#final-cta {
 }
 
 section#final-cta h1{
+    color: black;
     font-size: 130px;
     text-align: start;
     line-height: 115px;
@@ -532,4 +535,17 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+footer a {
+    display: inline-block;
+    color: #00bfff;
+    text-decoration: none;
+
+    transition: transform 0.2s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
 }
