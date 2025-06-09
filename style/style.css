@@ -64,6 +64,7 @@ header {
     
 }
 
+/*----- Header -----*/
 #logo-finmind {
     width: 140px;
     height: 70px;   
@@ -163,6 +164,10 @@ section#hero {
     line-height: 115px;
 }
 
+#hero-title-level-word {
+    color: var(--primary);
+}
+
 #flex-container-hero > p {
     max-width: 783px;
     margin-top: 50px;
@@ -255,7 +260,7 @@ img#finance-path {
 
 /*----- Testimonials -----*/
 #testimonials {
-    padding: 80px 20px;
+    padding: 50px 20px;
     background-color: var(--light-bg);
     display: flex;
     justify-content: center;
@@ -342,22 +347,28 @@ img#finance-path {
 /*----- Pricing -----*/
 section#pricing {
     background-color: var(--light-bg);
+    color: var(--dark);
 
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 section#pricing h2 {
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
 div.plan {
     max-width: 500px;
     width: 100%;
-    height: 650px;
+    height: 620px;
     padding: 15px 40px;
-    border: 2px solid blue;
+
+    border: 5px solid transparent; 
+    border-image: linear-gradient(45deg, var(--dark),#83869c); 
+    border-image-slice: 1; 
 }
 
 div.plan h3, div.plan p {
@@ -365,8 +376,57 @@ div.plan h3, div.plan p {
 }
 
 div.plan h3{
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 400;
+}
+
+
+#plan-starter span.price-value {
+    color: var(--dark);
+}
+
+#plan-pro {
+    position: relative;
+    border: 5px solid transparent; 
+    border-image: linear-gradient(45deg, #1a8148, #4fe693); 
+    border-image-slice: 1; 
+}
+
+#plan-pro-chosen {
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    color: white;
+    background-color: var(--primary);
+    width: 170px;
+    height: 40px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#plan-pro h3 {
+    color: var(--primary);
+}
+
+#plan-pro span.price-value {
+    color: var(--primary);
+}
+
+#plan-premium h3 {
+    color: var(--tertiary);
+}
+
+#plan-premium span.price-value {
+    color: var(--tertiary);
+}
+
+#plan-premium {
+    border: 5px solid transparent; 
+    border-image: linear-gradient(45deg, #c08f2c, #ffc85a); 
+    border-image-slice: 1; 
 }
 
 div.plan p{
@@ -381,9 +441,8 @@ div.price-container {
     gap: 5px;
 }
 
-p.price span.price-value {
+span.price-value {
     font-size: 70px;
-    color: var(--primary)
 }
 
 p.price {
@@ -400,14 +459,14 @@ p.price span.price-text {
     grid-column: 2 / 3;
 }
 
-
 div.plan ul {
     list-style-type: none;
-    line-height: 35px;
+    line-height: 40px;
 }
 
 div.plan li {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 300;
 }
 
 div.plan li::before {
@@ -416,4 +475,16 @@ div.plan li::before {
 
 div.plan li.disabled::before {
     content: '❌';
+}
+
+div.pricing-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+div.pricing-button-container .pricing-button {
+    width: 300px;
+    height: 45px;
 }

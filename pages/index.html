@@ -12,9 +12,9 @@
         <img src="../images/logo/2.png" alt="Finmind logo" id="logo-finmind">
         <menu>
             <nav>
-                <a href="#">Features</a>
-                <a href="#">Testimonials</a>
-                <a href="#">Pricing</a>
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#pricing">Pricing</a>
             </nav>
 
             <button>Download</button>
@@ -25,7 +25,7 @@
     <section id="hero"> <!--PENSAR EM FAZER ANIMAÇÃO NESSA PARTE-->
         <div id="flex-container-hero">
             <h1>
-                Level up <br> your money
+                Level <span id="hero-title-level-word">up</span> <br> your money</span>
             </h1>
             <p>
                 FinMind gives you the tools to manage your money, hit your goals, and build a solid financial future — even if you’re just getting started. Simple, stress-free, and made for real life. Click the button below and start organizing your financial life.
@@ -124,7 +124,7 @@
         </div>
     </section>
     <section id="pricing">
-        <div class="plan" id="plan-starter">
+        <div class="plan" id="plan-free">
             <h3>Starter</h3>
             <p>Perfect for beginners</p>
             <div class="price-container">
@@ -141,9 +141,13 @@
                 <li class="disabled"> No bank account sync</li>
                 <li class="disabled"> No priority support</li>
             </ul>
+            <div class="pricing-button-container">
+                <button class="pricing-button">Sign up for free</button>
+            </div>
         </div>
         <div class="plan" id="plan-pro">
-            <h3>Pro</h3>
+            <h1 id="plan-pro-chosen">Most chosen</h1>
+            <h3 id="plan-pro-title">Pro</h3>
             <p>For those ready to level up</p>
             <div class="price-container">
                 <p class="price">
@@ -159,6 +163,9 @@
                 <li> Weekly insights</li>
                 <li> Personalized tips</li>
             </ul>
+            <div class="pricing-button-container">
+                <button class="pricing-button">Sign up for free</button>
+            </div>
         </div>
         <div class="plan" id="plan-premium">
             <h3>Premium</h3>
@@ -177,13 +184,16 @@
                 <li> Priority support</li>
                 <li> AI financial assistant</li>
             </ul>
+            <div class="pricing-button-container">
+                <button class="pricing-button">Sign up for free</button>
+            </div>
         </div>
     </section>
-    <!--<section id="final-cta">
+    <section id="final-cta">
         <h1>Small steps. Big wins.</h1>
-        <h4>Start today and feel the difference by next month.</h4>
+        <p>Start today and feel the difference by next month.</p>
         <button>Join FinMind</button>
-    </section>-->
+    </section>
     <script src="../javascript/script.js"></script>
 </body>
 </html>
