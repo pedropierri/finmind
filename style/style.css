@@ -29,7 +29,7 @@ body {
     background-color: var(--light-bg);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-title);
 }
 
@@ -422,8 +422,8 @@ img#finance-path {
 /*----- Pricing -----*/
 section#pricing {
     background-color: var(--light-bg);
-     color: var(--dark);
-     display: flex;
+    color: var(--dark);
+    display: flex;
     padding: 80px 20px; 
     justify-content: center;
     align-items: center; 
@@ -431,22 +431,22 @@ section#pricing {
     flex-wrap: wrap;
 }
 
-section#pricing h2 {
-    font-size: 45px;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
 div.plan {
+    border: 2px solid red;
     max-width: 400px;
     width: 100%;
-    min-height: 620px;
+    min-height: 650px;
+    max-height: 650px;
     padding: 25px 40px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
     
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
 }
 
 div.plan:hover {
@@ -454,29 +454,36 @@ div.plan:hover {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-div.plan h3, div.plan p {
-    text-align: center;
-}
-
 div.plan h3{
     font-size: 70px;
     font-weight: 400;
+    text-align: center;
 }
 
-
-#plan-starter span.price-value {
-    color: var(--dark);
+div.plan h4{
+    font-size: 40px;
+    font-weight: 400;
+    text-align: start;
 }
+
+div.plan p{
+    font-size: 20px;
+    text-align: center;
+}
+
+#plan-starter {
+    border: 5px solid transparent; 
+    border-image: linear-gradient(45deg, #2D3047, #888db4); 
+    border-image-slice: 1; 
+}
+
 
 #plan-pro {
-    position: relative;
-    border: 5px solid transparent; 
-    border-image: linear-gradient(45deg, #1a8148, #4fe693); 
-    border-image-slice: 1; 
-
-    position: relative;
-    border: 3px solid var(--primary);
-    animation: pulse-glow 3s ease-in-out infinite;
+    position: relative; 
+    
+    border: 5px solid transparent;  
+    border-image: linear-gradient(45deg, #1a8148, #4fe693);
+    border-image-slice: 1;
 }
 
 #plan-pro-chosen {
@@ -495,7 +502,6 @@ div.plan h3{
     align-items: center;
     font-size: 18px;
 }
-
 
 #plan-pro h3 {
     color: var(--primary);
@@ -519,10 +525,6 @@ div.plan h3{
     border-image-slice: 1; 
 }
 
-div.plan p{
-    font-size: 20px;
-}
-
 div.price-container {
     display: grid;
     grid-template-columns: 80px 210px;
@@ -542,11 +544,13 @@ p.price {
 }
 
 p.price span.price-text {
+    min-height: 40px; 
     font-size: 20px;
     text-align: start;
     line-height: 20px;
 
     grid-column: 2 / 3;
+    
 }
 
 div.plan ul {
@@ -578,6 +582,9 @@ div.pricing-button-container .pricing-button {
     width: 300px;
     height: 45px;
 }
+*/
+
+
 
 /*----- Final CTA -----*/
 section#final-cta {
@@ -636,4 +643,4 @@ footer a {
 footer a:hover {
     text-decoration: underline;
     transform: scale(1.05);
-}
+}   
