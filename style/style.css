@@ -119,7 +119,7 @@ button:hover {
 section#hero {
     padding: 100px 100px 0px 100px;
     display: grid;
-    grid-template-columns: minmax(350px, 783px) 1fr;
+    grid-template-columns: minmax(100px, 783px) 1fr;
     align-items: center;
 }
 
@@ -675,9 +675,15 @@ footer a:hover {
         display: none;
     }
 
+    section#hero {
+        grid-template-columns: minmax(350px, 1fr);
+        padding: 60px 15px;
+        overflow-x: hidden; 
+    }
+
     #flex-container-hero > h1 {
-        font-size: 80px;
-        line-height: 75px;
+        font-size: 90px;   
+        line-height: 1;   
         text-align: center;
     }
 
@@ -686,14 +692,15 @@ footer a:hover {
         text-align: center;
     }
 
+    #phone {
+        min-width: 0;
+        max-width: 80%;
+    }
+
     section#features {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 40px;                  
-    }
-
-    #features:nth-child(1) {
-        grid-row: 1 / 2;
     }
 
     #learn h1 {
@@ -718,5 +725,6 @@ footer a:hover {
     section#final-cta h1 {
         font-size: 70px;
         line-height: 65px;
+        text-align: center;
     }
 }
