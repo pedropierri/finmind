@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     //Testimonials
     const track = document.querySelector('.carousel-track');
 
-    // Clona todos os testemunhos e os adiciona ao final da lista
     const testimonials = Array.from(track.children);
     testimonials.forEach(testimonial => {
         const clone = testimonial.cloneNode(true);
         track.appendChild(clone);
     });
+    
     // Animations
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
