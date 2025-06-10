@@ -347,13 +347,16 @@ img#finance-path {
     width: 90%;
     max-width: 1200px;
     overflow: hidden;
+    
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
     gap: 30px;
+    animation: scroll-infinite 40s linear infinite;
 }
+
 
 .testimony {
     flex: 0 0 calc(50% - 15px);
@@ -419,6 +422,20 @@ img#finance-path {
     }
 }
 
+@keyframes scroll-infinite {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        
+        transform: translateX(calc(-100% - 30px));
+    }
+}
+
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+}
+
 /*----- Pricing -----*/
 section#pricing {
     background-color: var(--light-bg);
@@ -463,7 +480,7 @@ div.plan h3{
 div.plan h4{
     font-size: 40px;
     font-weight: 400;
-    text-align: start;
+    text-align: start   ;
 }
 
 div.plan p{
@@ -582,7 +599,6 @@ div.pricing-button-container .pricing-button {
     width: 300px;
     height: 45px;
 }
-*/
 
 
 
@@ -621,7 +637,37 @@ img#computer-finmind {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     justify-self: center;
+
+    position: relative;
+    overflow: hidden;
 }
+
+
+#button-join-finmind::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 75%;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    
+    transform: skewX(-25deg);
+    animation: shine-effect 4s infinite linear;
+}
+
+@keyframes shine-effect {
+    100% {
+        left: 200%;
+    }
+}
+
 
 /*----- Footer -----*/
 

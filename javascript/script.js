@@ -24,32 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Testimonials
     const track = document.querySelector('.carousel-track');
-    
-    if (!track) {
-        console.error("Elemento .carousel-track not founded.");
-        return;
-    }
 
-    const slides = Array.from(track.children);
-    if (slides.length === 0) return;
-
-    let currentIndex = 0;
-
-    const updateCarouselPosition = () => {
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const offset = slideWidth * currentIndex;
-        track.style.transform = `translateX(-${offset}px)`;
-    };
-
-    const moveToNextSlide = () => {
-      currentIndex = (currentIndex + 2) % slides.length;
-      updateCarouselPosition();
-    };
-
-    setInterval(moveToNextSlide, 4000);
-    window.addEventListener('resize', updateCarouselPosition);
-    updateCarouselPosition();
-
+    // Clona todos os testemunhos e os adiciona ao final da lista
+    const testimonials = Array.from(track.children);
+    testimonials.forEach(testimonial => {
+        const clone = testimonial.cloneNode(true);
+        track.appendChild(clone);
+    });
     // Animations
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
@@ -62,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.5
+        threshold: 0.25
     });
 
     elementsToAnimate.forEach(element => {
