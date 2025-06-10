@@ -648,20 +648,18 @@ footer a:hover {
     section#hero,
     section#features,
     section#final-cta {
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
 
     header {
         grid-template-columns: auto 1fr;
         gap: 20px;
-    }
-
-    menu {
-        justify-content: flex-end;
+        padding: 5px 15px;
     }
 
     nav {
         gap: 15px;
+        flex-grow: 1;
     }
 
     nav a {
@@ -673,7 +671,7 @@ footer a:hover {
     }
 
     section#hero {
-        grid-template-columns: minmax(350px, 1fr);
+        grid-template-columns: 1fr;
         padding: 60px 15px;
         overflow-x: hidden; 
     }
@@ -692,6 +690,9 @@ footer a:hover {
     #phone {
         min-width: 0;
         max-width: 80%;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     section#features {
