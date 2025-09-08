@@ -171,6 +171,7 @@ img#phone {
 
 /*----- Features Section -----*/
 section#features {
+    margin: 60px 0px;
     padding: 20px 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -433,7 +434,7 @@ div.plan li.disabled::before {
 
 /*----- Final CTA Section -----*/
 section#final-cta {
-    padding: 50px;
+    padding: 0px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -450,12 +451,15 @@ section#final-cta h1 {
 }
 
 img#computer-finmind {
+    margin-top: -100px;
+    height: 650px;
     width: 100%;
     max-width: 700px;
     grid-row: 3;
 }
 
 #button-join-finmind {
+    margin-top: 50px;
     width: 150px;
     height: 70px;
     grid-row: 2;
@@ -649,4 +653,8 @@ footer a:hover {
         font-size: 65px;
         line-height: 65px;
     }
+}
+
+#final-cta-img {
+
 }
