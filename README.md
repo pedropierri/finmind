@@ -10,7 +10,7 @@ The FinMind Landing Page (a fictional brand I created) is completely modern and 
 <img width="1000" height="860" alt="image" src="https://github.com/user-attachments/assets/4c4ef0c1-b81f-4f6d-a94d-bf0fe2662e7a" />
 
 <h2>How to Use 🛠️</h2>
-1. Clone the repository using "git clone 'https://github.com/pedropierri/landing_finmind.git'"
+1. Clone the repository using git clone https://github.com/pedropierri/landing_finmind.git
 <br> <br>
 2. Open the index.html file
 
