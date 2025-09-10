@@ -11,7 +11,7 @@ The FinMind Landing Page (a fictional brand I created) is completely modern and 
 
 <h2>How to Use 🛠️</h2>
 1. Clone the repository using "git clone 'https://github.com/pedropierri/landing_finmind.git'"
-
+<br> <br>
 2. Open the index.html file
 
 ---
