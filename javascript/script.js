@@ -1,40 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //Scroll
+
+    // Smooth Scroll
     const lenis = new Lenis({
         duration: 1.7,
         lerp: 0.07,
         wheelMultiplier: 1,
-        touchMultiplier: 2, 
-        smoothWheel: true,   
-        smoothTouch: false, 
-    })
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+        touchMultiplier: 2,
+        smoothWheel: true,
+        smoothTouch: false,
+    });
 
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Anchor Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+            nav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
             lenis.scrollTo(this.getAttribute('href'));
         });
     });
 
-    requestAnimationFrame(raf);
-
-    //Testimonials
+    // Testimonials Carousel
     const track = document.querySelector('.carousel-track');
-
-    const testimonials = Array.from(track.children);
-    testimonials.forEach(testimonial => {
-        const clone = testimonial.cloneNode(true);
-        track.appendChild(clone);
+    Array.from(track.children).forEach(item => {
+        track.appendChild(item.cloneNode(true));
     });
-    
-    // Animations
-    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
-
+    // Scroll Animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -42,11 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.25
-    });
+    }, { threshold: 0.2 });
 
-    elementsToAnimate.forEach(element => {
-        observer.observe(element);
-    });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 });
